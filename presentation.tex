@@ -85,16 +85,17 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={Beyond Expected Goals: A Probabilistic Framework for Shot Occurrences in Soccer},
-  pdfauthor={Tianshu Feng, Jonathan Pipping, \& Paul Sabin},
+  pdfauthor={Tianshu Feng, Jonathan Pipping, and Paul Sabin},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title[Beyond Expected Goals]{Beyond Expected Goals: A Probabilistic
 Framework for Shot Occurrences in Soccer}
 \author[Feng, T., Pipping, J., \& Sabin, P.]{Tianshu Feng, Jonathan
-Pipping, \& Paul Sabin}
-\date{2025-07-29}
+Pipping, and Paul Sabin}
+\date{\today}
 \institute[UPenn]{University of Pennsylvania}
+\logo{\includegraphics[height=1cm]{wharton.png}}
 
 \begin{document}
 \frame{\titlepage}
@@ -146,14 +147,124 @@ Pipping, \& Paul Sabin}
   Statistical approach
 \item
   Data processing steps
+\item
+  Model specifications
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Statistical Approach}
+\protect\phantomsection\label{statistical-approach}
+\begin{itemize}
+\tightlist
+\item
+  \texttt{xShot}: the probability that a shot occurs in the next second
+\item
+  Build a model to estimate \texttt{xShot} based on features from
+  tracking data
+\item
+  Also build our own version of \texttt{xG} model using the same
+  features on observed shots
+\item
+  Estimate the probability of goal as
+  \(P(goal) = P(shot) \cdot P(goal | shot)\)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Data Processing}
+\protect\phantomsection\label{data-processing}
+\begin{itemize}
+\tightlist
+\item
+  Remove games where no shots are recorded
+\item
+  Only keep frames where the ball is in play and a team has clear
+  possession
+\item
+  Linearly interpolate ball positions to fill in missing frames
+\item
+  \texttt{attack}: Index of the attack the current frame is on (0 if it
+  is not on an attack)
 
   \begin{itemize}
   \tightlist
   \item
-    \(\theta\)
+    Start with the attacking team gaining possession in their attacking
+    third
+  \item
+    End with the defending team regaining possession or the ball is out
+    of their attacking third
+  \item
+    Only keep frames with \texttt{attack\ \textgreater{}\ 0}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data Processing}
+\protect\phantomsection\label{data-processing-1}
+\begin{itemize}
+\tightlist
+\item
+  Rotate the coordinates \(180^\circ\) around the center point for
+  frames where the team attacks from right to left to unify the
+  attacking directions and make all \(x\)-coordinates positive
+\item
+  Use a polar coordinate system centered on the goal for the ball
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(r_{ball}\) and \(\theta_{ball}\) represent the distance and angle
+    of the ball from the goal
+  \item
+    Keep the \(z\)-coordinate and compute the speed of the ball
   \end{itemize}
 \item
-  Model specifications
+  Use a polar coordinate system centered on the ball for each player
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Choose the 5 closest offense teammates and non-GK defenders to the
+    ball as features
+  \item
+    Keep goalkeeper positions as a separate feature
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Data Processing}
+\protect\phantomsection\label{data-processing-2}
+\begin{itemize}
+\tightlist
+\item
+  \texttt{openGoal}: Percentage of the goal that is open from the ball's
+  position
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Simplify every defender as a circle with a radius of 0.75 m
+  \item
+    Compute the two tangent lines from the ball to every defender in
+    front of the ball their intersection points with the goal line
+  \item
+    Calculate the length of the open goal as the length of goal not
+    covered by segments formed by the intersection points
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Model Specifications}
+\protect\phantomsection\label{model-specifications}
+\begin{itemize}
+\tightlist
+\item
+  Trained on all tracking data of 2022-2025 Premier League seasons
+\item
+  Use a 5-fold cross-validation to evaluate both \texttt{xG} and
+  \texttt{xShot} XGBoost models
+\item
+  Choose log loss as the evaluation metric
 \end{itemize}
 \end{frame}
 
