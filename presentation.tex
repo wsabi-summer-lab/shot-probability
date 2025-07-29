@@ -57,7 +57,6 @@
 \fi
 \usepackage{lmodern}
 \usetheme[]{Madrid}
-\usecolortheme[]{beaver}
 \ifPDFTeX\else
   % xetex/luatex font selection
 \fi
@@ -80,6 +79,13 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{xcolor}
+\definecolor{pennred}{HTML}{990000}
+\definecolor{pennblue}{HTML}{011f5b}
+\setbeamercolor{structure}{fg=pennred}
+\setbeamercolor{frametitle}{bg=pennblue, fg=white}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{item}{fg=pennred}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}

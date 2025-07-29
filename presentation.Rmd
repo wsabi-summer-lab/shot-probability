@@ -11,9 +11,17 @@ logo: "wharton.png"
 output:
   beamer_presentation:
     theme: Madrid
-    colortheme: beaver
     keep_tex: true
     template: custom-beamer.tex
+    latex_engine: xelatex
+header-includes:
+  - \usepackage{xcolor}
+  - \definecolor{pennred}{HTML}{990000}
+  - \definecolor{pennblue}{HTML}{011f5b}
+  - \setbeamercolor{structure}{fg=pennred}
+  - \setbeamercolor{frametitle}{bg=pennblue, fg=white}
+  - \setbeamercolor{title}{fg=white}
+  - \setbeamercolor{item}{fg=pennred}
 ---
 
 ## What Are Expected Goals (xG)?
