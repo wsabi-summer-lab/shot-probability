@@ -171,7 +171,7 @@ over 1}
   \begin{align*}
   \text{xG+} &= \mathbb{P}(\text{goal scored}) \\
   &= \mathbb{P}(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}(\text{shot taken}) \\
-  &= \text{xG}\text{xShot}
+  &= \text{xG}\cdot\text{xShot}
   \end{align*}
 \item
   We proceed by estimating xG and xShot to derive our metric
@@ -190,9 +190,6 @@ over 1}
 \item
   Also build our own version of \texttt{xG} model using the same
   features on observed shots
-\item
-  Estimate the probability of goal as
-  \(P(goal) = P(shot) \cdot P(goal | shot)\)
 \end{itemize}
 \end{frame}
 
