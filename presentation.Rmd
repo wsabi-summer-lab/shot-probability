@@ -12,7 +12,6 @@ output:
   beamer_presentation:
     theme: Madrid
     colortheme: beaver
-    toc: true
     keep_tex: true
     template: custom-beamer.tex
 ---
