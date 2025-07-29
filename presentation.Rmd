@@ -7,8 +7,8 @@ output:
     theme: "default"
     colortheme: "default"
     fonttheme: "default"
-    fontsize: 11pt
-    aspectratio: 169
+header-includes:
+  - \PassOptionsToClass{11pt,aspectratio=169}{beamer}
 ---
 
 ## Introduction
