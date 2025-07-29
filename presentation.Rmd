@@ -15,26 +15,27 @@ output:
     template: custom-beamer.tex
 ---
 
-## Background?
+## What Are Expected Goals (xG)?
 
 - Expected Goals (xG) is a metric that estimates the probability that a shot is scored
 - Depends on factors like distance from goal, angle to goal, shot type, and player positions
-- Estimated by an XGBoost model trained on historical shot data
+- Estimated by XGBoost models trained on historical shot data
 - Often used to measure the quality of a chance
-- Can be aggregated over a match to measure team performance
+- Aggregated over a match or season to measure team performance
 
 ## Limitations of xG
 
-- Selection bias: xG is only recorded for shots we observe!
-- Better shooters are over-represented in the data
-- Significant chances without a shot event aren't recorded
-- Misses opportunities where players should have shot but didn't
+- Models are only trained on **observed** shots, inducing significant selection bias
+- Skilled attackers who take more shots are over-represented
+- Threatening attacks with no recorded shots are omitted
+- Repeated shots on a single possession are added independently
 
-## Examples of xG Limitations
 
-*Video of big chance with no shot*
+## Visual Examples
 
-*Video of multiple shots on one attack*
+*Video: Player has clear chance but passes instead of shooting*
+
+*Video: Multiple shots from same attacking sequence*
 
 ## Methods
 
