@@ -104,9 +104,8 @@ Pipping, \& Paul Sabin}
 \begin{itemize}
 \tightlist
 \item
-  Expected Goals (xG) estimates the probability that a shot is scored
-\item
-  Estimated by an XGBoost model trained on historical shot data
+  Expected Goals (xG) is a metric that estimates the probability that a
+  shot is scored
 \item
   Depends on factors like distance from goal, angle to goal, shot type,
   and player positions
@@ -131,15 +130,19 @@ Pipping, \& Paul Sabin}
 \item
   Threatening attacks with no recorded shots are omitted
 \item
-  Repeated shots on a single possession are added independently
+  Aggregating xG across a match double-counts rebound chances
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Visual Examples}
-\protect\phantomsection\label{visual-examples}
+\begin{frame}{Visual Example 1}
+\protect\phantomsection\label{visual-example-1}
 \emph{Video: Player has clear chance but passes instead of shooting}
+\end{frame}
 
-\emph{Video: Multiple shots from same attacking sequence}
+\begin{frame}{Visual Example 2}
+\protect\phantomsection\label{visual-example-2}
+\emph{Video: Multiple shots from same attacking sequence w/ xG that add
+over 1}
 \end{frame}
 
 \begin{frame}{Methods}

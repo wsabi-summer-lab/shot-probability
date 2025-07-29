@@ -28,14 +28,15 @@ output:
 - Models are only trained on **observed** shots, inducing significant selection bias
 - Skilled attackers who take more shots are over-represented
 - Threatening attacks with no recorded shots are omitted
-- Repeated shots on a single possession are added independently
+- Aggregating xG across a match double-counts rebound chances 
 
-
-## Visual Examples
+## Visual Example 1
 
 *Video: Player has clear chance but passes instead of shooting*
 
-*Video: Multiple shots from same attacking sequence*
+## Visual Example 2
+
+*Video: Multiple shots from same attacking sequence w/ xG that add over 1*
 
 ## Methods
 
