@@ -1,14 +1,18 @@
 ---
-title: "Shot Probability Analysis"
-author: "Your Name"
-date: "`r Sys.Date()`"
+title: Shot Probability Analysis
+author: Tianshu Feng, Jonathan Pipping, and Paul Sabin
+shortauthor: Feng, T., Pipping, J., & Sabin, P.
+date: \today
+institute: University of Pennsylvania
+shortinstitute: UPenn
+fontsize: 11pt
+aspect-ratio: 16:9
 output:
   beamer_presentation:
-    theme: "default"
-    colortheme: "default"
-    fonttheme: "default"
-header-includes:
-  - \PassOptionsToClass{11pt,aspectratio=169}{beamer}
+    theme: Madrid
+    colortheme: beaver
+    keep_tex: true
+    template: custom-beamer.tex
 ---
 
 ## Introduction
@@ -27,6 +31,7 @@ header-includes:
 
 - Statistical approach
 - Data processing steps
+  - $\theta$
 - Model specifications
 
 ## Results

@@ -1,0 +1,177 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  11pt,
+  ignorenonframetext,
+]{beamer}
+\newif\ifbibliography
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% remove section numbering
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{section title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{subsection title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\usetheme[]{Madrid}
+\usecolortheme[]{beaver}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Shot Probability Analysis},
+  pdfauthor={Tianshu Feng, Jonathan Pipping, and Paul Sabin},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Shot Probability Analysis}
+\author[Feng, T., Pipping, J., \& Sabin, P.]{Tianshu Feng, Jonathan
+Pipping, and Paul Sabin}
+\date{\today}
+\institute[UPenn]{University of Pennsylvania}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Introduction}
+\protect\phantomsection\label{introduction}
+\begin{itemize}
+\tightlist
+\item
+  Welcome to the presentation
+\item
+  Today we'll discuss shot probability analysis
+\item
+  Key objectives and findings
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Background}
+\protect\phantomsection\label{background}
+\begin{itemize}
+\tightlist
+\item
+  Context of the analysis
+\item
+  Data sources and methodology
+\item
+  Research questions
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Methods}
+\protect\phantomsection\label{methods}
+\begin{itemize}
+\tightlist
+\item
+  Statistical approach
+\item
+  Data processing steps
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\theta\)
+  \end{itemize}
+\item
+  Model specifications
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+\protect\phantomsection\label{results}
+\begin{itemize}
+\tightlist
+\item
+  Key findings
+\item
+  Statistical significance
+\item
+  Practical implications
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusions}
+\protect\phantomsection\label{conclusions}
+\begin{itemize}
+\tightlist
+\item
+  Summary of main points
+\item
+  Future work
+\item
+  Questions and discussion
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Thank You}
+\protect\phantomsection\label{thank-you}
+Questions?
+\end{frame}
+
+\end{document}
