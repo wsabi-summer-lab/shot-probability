@@ -1,0 +1,46 @@
+---
+title: "Shot Probability Analysis"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: "default"
+    colortheme: "default"
+    fonttheme: "default"
+    fontsize: 11pt
+    aspectratio: 169
+---
+
+## Introduction
+
+- Welcome to the presentation
+- Today we'll discuss shot probability analysis
+- Key objectives and findings
+
+## Background
+
+- Context of the analysis
+- Data sources and methodology
+- Research questions
+
+## Methods
+
+- Statistical approach
+- Data processing steps
+- Model specifications
+
+## Results
+
+- Key findings
+- Statistical significance
+- Practical implications
+
+## Conclusions
+
+- Summary of main points
+- Future work
+- Questions and discussion
+
+## Thank You
+
+Questions? 
