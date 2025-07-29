@@ -12,6 +12,7 @@ output:
   beamer_presentation:
     theme: Madrid
     colortheme: beaver
+    toc: true
     keep_tex: true
     template: custom-beamer.tex
 ---
@@ -91,6 +92,16 @@ output:
 - Key findings
 - Statistical significance
 - Practical implications
+
+## Results
+
+\begin{columns}[c]
+  \column{0.4\textwidth}
+  \includegraphics[width=\linewidth]{calibration_1.png}
+  
+  \column{0.4\textwidth}
+  \includegraphics[width=\linewidth]{calibration_2.png}
+\end{columns}
 
 ## Conclusions
 
