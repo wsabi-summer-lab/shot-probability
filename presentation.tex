@@ -84,44 +84,58 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Shot Probability Analysis},
-  pdfauthor={Tianshu Feng, Jonathan Pipping, and Paul Sabin},
+  pdftitle={Beyond Expected Goals: A Probabilistic Framework for Shot Occurrences in Soccer},
+  pdfauthor={Tianshu Feng, Jonathan Pipping, \& Paul Sabin},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Shot Probability Analysis}
+\title[Beyond Expected Goals]{Beyond Expected Goals: A Probabilistic
+Framework for Shot Occurrences in Soccer}
 \author[Feng, T., Pipping, J., \& Sabin, P.]{Tianshu Feng, Jonathan
-Pipping, and Paul Sabin}
-\date{\today}
+Pipping, \& Paul Sabin}
+\date{2025-07-29}
 \institute[UPenn]{University of Pennsylvania}
 
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}{Introduction}
-\protect\phantomsection\label{introduction}
+\begin{frame}{What are Expected Goals (xG)?}
+\protect\phantomsection\label{what-are-expected-goals-xg}
 \begin{itemize}
 \tightlist
 \item
-  Welcome to the presentation
+  Expected Goals (xG) estimates the probability that a shot is scored
 \item
-  Today we'll discuss shot probability analysis
+  Estimated by an XGBoost model trained on historical shot data
 \item
-  Key objectives and findings
+  Depends on factors like distance from goal, angle to goal, shot type,
+  and player positions
+\item
+  Often used to measure the quality of a chance or a team's performance
+  across a game
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Background}
-\protect\phantomsection\label{background}
+\begin{frame}{Limitations of xG}
+\protect\phantomsection\label{limitations-of-xg}
 \begin{itemize}
 \tightlist
 \item
-  Context of the analysis
+  Selection bias: xG is only recorded for shots we observe!
 \item
-  Data sources and methodology
+  Better shooters are over-represented in the data
 \item
-  Research questions
+  Significant chances without a shot event aren't recorded
+\item
+  Misses opportunities where players should have shot but didn't
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Examples of xG Limitations}
+\protect\phantomsection\label{examples-of-xg-limitations}
+\emph{Video of big chance with no shot}
+
+\emph{Video of multiple shots on one attack}
 \end{frame}
 
 \begin{frame}{Methods}
