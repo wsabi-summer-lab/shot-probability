@@ -3,7 +3,7 @@ title: "Beyond Expected Goals: A Probabilistic Framework for Shot Occurrences in
 shorttitle: "Beyond Expected Goals"
 author: "Tianshu Feng, Jonathan Pipping, and Paul Sabin"
 shortauthor: "Feng, T., Pipping, J., & Sabin, P."
-date: \today
+date: "`r Sys.Date()`"
 institute: "University of Pennsylvania"
 shortinstitute: "UPenn"
 fontsize: 11pt
@@ -52,15 +52,17 @@ header-includes:
 - A more complete picture of goal expectancy
   - Accounts for high-threat attacks with no shots
   - Does not double-count rebound chances
-- For each attacking possession, we calculate xG+, defined as follows:
+- At each frame $t$, we calculate xG+ as the probability a goal is scored
 \begin{align*}
-\text{xG+} &= \mathbb{P}(\text{goal scored}) \\
-  &= \mathbb{P}(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}(\text{shot taken}) \\
-  &= \text{xG}\cdot\text{xShot}
+\text{xG+}_t &= \mathbb{P}_t(\text{goal scored}) \\
+&= \mathbb{P}_t(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}_t(\text{shot taken}) \\
+&= \text{xG}_t\cdot\text{xShot}_t
 \end{align*}
-- We proceed by estimating xG and xShot to derive our metric
+- Then over a possession with $n$ frames, xG+ is defined as
 
-## Statistical Approach
+$$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left[1 - \mathbb{P}_t\left(\text{goal scored}\right)\right]$$
+
+## Estimating xShot
 
 - `xShot`: the probability that a shot occurs in the next second
 - Build a model to estimate `xShot` based on features from tracking data
@@ -78,7 +80,7 @@ header-includes:
   
 ## Data Processing
 
-- Rotate the coordinates $180^\circ$ around the center point for frames where the team attacks from right to left to unify the attacking directions and make all $x$-coordinates positive
+- Rotate the coordinates $180^{\circ}$ around the center point for frames where the team attacks from right to left to unify the attacking directions and make all $x$-coordinates positive
 - Use a polar coordinate system centered on the goal for the ball
   - $r_{ball}$ and $\theta_{ball}$ represent the distance and angle of the ball from the goal
   - Keep the $z$-coordinate and compute the speed of the ball

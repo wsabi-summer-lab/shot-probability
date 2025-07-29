@@ -99,7 +99,7 @@
 Framework for Shot Occurrences in Soccer}
 \author[Feng, T., Pipping, J., \& Sabin, P.]{Tianshu Feng, Jonathan
 Pipping, and Paul Sabin}
-\date{\today}
+\date{2025-07-29}
 \institute[UPenn]{University of Pennsylvania}
 \logo{\includegraphics[height=1cm]{wharton.png}}
 
@@ -167,19 +167,21 @@ over 1}
     Does not double-count rebound chances
   \end{itemize}
 \item
-  For each attacking possession, we calculate xG+, defined as follows:
-  \begin{align*}
-  \text{xG+} &= \mathbb{P}(\text{goal scored}) \\
-  &= \mathbb{P}(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}(\text{shot taken}) \\
-  &= \text{xG}\cdot\text{xShot}
+  At each frame \(t\), we calculate xG+ as the probability a goal is
+  scored \begin{align*}
+  \text{xG+}_t &= \mathbb{P}_t(\text{goal scored}) \\
+  &= \mathbb{P}_t(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}_t(\text{shot taken}) \\
+  &= \text{xG}_t\cdot\text{xShot}_t
   \end{align*}
 \item
-  We proceed by estimating xG and xShot to derive our metric
+  Then over a possession with \(n\) frames, xG+ is defined as
 \end{itemize}
+
+\[\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left[1 - \mathbb{P}_t\left(\text{goal scored}\right)\right]\]
 \end{frame}
 
-\begin{frame}[fragile]{Statistical Approach}
-\protect\phantomsection\label{statistical-approach}
+\begin{frame}[fragile]{Estimating xShot}
+\protect\phantomsection\label{estimating-xshot}
 \begin{itemize}
 \tightlist
 \item
@@ -227,7 +229,7 @@ over 1}
 \begin{itemize}
 \tightlist
 \item
-  Rotate the coordinates \(180^\circ\) around the center point for
+  Rotate the coordinates \(180^{\circ}\) around the center point for
   frames where the team attacks from right to left to unify the
   attacking directions and make all \(x\)-coordinates positive
 \item
