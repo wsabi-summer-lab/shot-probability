@@ -30,7 +30,7 @@ output:
 - Models are only trained on **observed** shots, inducing significant selection bias
 - Skilled attackers who take more shots are over-represented
 - Threatening attacks with no recorded shots are omitted
-- Aggregating xG across a match double-counts rebound chances 
+- Aggregating xG across a match double-counts rebound chances
 
 ## Visual Example 1
 
@@ -40,11 +40,18 @@ output:
 
 *Video: Multiple shots from same attacking sequence w/ xG that add over 1*
 
-## Methods
+## Our Target Metric: xG+
 
-- Statistical approach
-- Data processing steps
-- Model specifications
+- A more complete picture of goal expectancy
+  - Accounts for high-threat attacks with no shots
+  - Does not double-count rebound chances
+- For each attacking possession, we calculate xG+, defined as follows:
+\begin{align*}
+\text{xG+} &= \mathbb{P}(\text{goal scored}) \\
+  &= \mathbb{P}(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}(\text{shot taken}) \\
+  &= \text{xG}\text{xShot}
+\end{align*}
+- We proceed by estimating xG and xShot to derive our metric
 
 ## Statistical Approach
 

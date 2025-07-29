@@ -153,16 +153,29 @@ Pipping, and Paul Sabin}
 over 1}
 \end{frame}
 
-\begin{frame}{Methods}
-\protect\phantomsection\label{methods}
+\begin{frame}{Our Target Metric: xG+}
+\protect\phantomsection\label{our-target-metric-xg}
 \begin{itemize}
 \tightlist
 \item
-  Statistical approach
+  A more complete picture of goal expectancy
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Accounts for high-threat attacks with no shots
+  \item
+    Does not double-count rebound chances
+  \end{itemize}
 \item
-  Data processing steps
+  For each attacking possession, we calculate xG+, defined as follows:
+  \begin{align*}
+  \text{xG+} &= \mathbb{P}(\text{goal scored}) \\
+  &= \mathbb{P}(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}(\text{shot taken}) \\
+  &= \text{xG}\text{xShot}
+  \end{align*}
 \item
-  Model specifications
+  We proceed by estimating xG and xShot to derive our metric
 \end{itemize}
 \end{frame}
 
