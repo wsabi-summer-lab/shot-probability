@@ -100,20 +100,22 @@ Pipping, and Paul Sabin}
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}{What are Expected Goals (xG)?}
+\begin{frame}{What Are Expected Goals (xG)?}
 \protect\phantomsection\label{what-are-expected-goals-xg}
 \begin{itemize}
 \tightlist
 \item
-  Expected Goals (xG) estimates the probability that a shot is scored
-\item
-  Estimated by an XGBoost model trained on historical shot data
+  Expected Goals (xG) is a metric that estimates the probability that a
+  shot is scored
 \item
   Depends on factors like distance from goal, angle to goal, shot type,
   and player positions
 \item
-  Often used to measure the quality of a chance or a team's performance
-  across a game
+  Estimated by XGBoost models trained on historical shot data
+\item
+  Often used to measure the quality of a chance
+\item
+  Aggregated over a match or season to measure team performance
 \end{itemize}
 \end{frame}
 
@@ -122,21 +124,26 @@ Pipping, and Paul Sabin}
 \begin{itemize}
 \tightlist
 \item
-  Selection bias: xG is only recorded for shots we observe!
+  Models are only trained on \textbf{observed} shots, inducing
+  significant selection bias
 \item
-  Better shooters are over-represented in the data
+  Skilled attackers who take more shots are over-represented
 \item
-  Significant chances without a shot event aren't recorded
+  Threatening attacks with no recorded shots are omitted
 \item
-  Misses opportunities where players should have shot but didn't
+  Aggregating xG across a match double-counts rebound chances
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Examples of xG Limitations}
-\protect\phantomsection\label{examples-of-xg-limitations}
-\emph{Video of big chance with no shot}
+\begin{frame}{Visual Example 1}
+\protect\phantomsection\label{visual-example-1}
+\emph{Video: Player has clear chance but passes instead of shooting}
+\end{frame}
 
-\emph{Video of multiple shots on one attack}
+\begin{frame}{Visual Example 2}
+\protect\phantomsection\label{visual-example-2}
+\emph{Video: Multiple shots from same attacking sequence w/ xG that add
+over 1}
 \end{frame}
 
 \begin{frame}{Methods}
