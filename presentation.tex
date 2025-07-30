@@ -99,7 +99,7 @@
 Framework for Shot Occurrences in Soccer}
 \author[Feng, T., Pipping, J., \& Sabin, P.]{Tianshu Feng, Jonathan
 Pipping, and Paul Sabin}
-\date{2025-07-29}
+\date{2025-07-30}
 \institute[UPenn]{University of Pennsylvania}
 \logo{\includegraphics[height=1cm]{wharton.png}}
 
@@ -168,11 +168,13 @@ over 1}
   \end{itemize}
 \item
   At each frame \(t\), we calculate xG+ as the probability a goal is
-  scored \begin{align*}
+  scored \[
+  \begin{aligned}
   \text{xG+}_t &= \mathbb{P}_t(\text{goal scored}) \\
   &= \mathbb{P}_t(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}_t(\text{shot taken}) \\
   &= \text{xG}_t\cdot\text{xShot}_t
-  \end{align*}
+  \end{aligned}
+  \]
 \item
   Then over a possession with \(n\) frames, xG+ is defined as
 \end{itemize}

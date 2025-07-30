@@ -53,11 +53,13 @@ header-includes:
   - Accounts for high-threat attacks with no shots
   - Does not double-count rebound chances
 - At each frame $t$, we calculate xG+ as the probability a goal is scored
-\begin{align*}
+$$
+\begin{aligned}
 \text{xG+}_t &= \mathbb{P}_t(\text{goal scored}) \\
 &= \mathbb{P}_t(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}_t(\text{shot taken}) \\
 &= \text{xG}_t\cdot\text{xShot}_t
-\end{align*}
+\end{aligned}
+$$
 - Then over a possession with $n$ frames, xG+ is defined as
 
 $$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left[1 - \mathbb{P}_t\left(\text{goal scored}\right)\right]$$
