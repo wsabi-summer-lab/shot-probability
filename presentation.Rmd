@@ -46,7 +46,7 @@ header-includes:
 
 ## Visual Example 1
 
-*Video: Player has clear chance but passes instead of shooting*
+*Video: Player has clear chance but fails to shoot*
 
 ## Visual Example 2
 
