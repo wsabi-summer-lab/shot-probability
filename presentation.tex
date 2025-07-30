@@ -119,9 +119,19 @@ Pipping, and Paul Sabin}
 \item
   Estimated by XGBoost models trained on historical shot data
 \item
-  Often used to measure the quality of a chance
-\item
-  Aggregated over a match or season to measure team performance
+  Has many practical uses
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A measure of individual shot quality
+  \item
+    Provides many individual-player metrics
+  \item
+    A comparison of team performance in a match
+  \item
+    A measure of team performance over a season
+  \end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -132,12 +142,24 @@ Pipping, and Paul Sabin}
 \item
   Models are only trained on \textbf{observed} shots, inducing
   significant selection bias
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Skilled attackers who take more shots are over-represented
+  \item
+    Threatening attacks with no recorded shots are omitted
+  \end{itemize}
 \item
-  Skilled attackers who take more shots are over-represented
-\item
-  Threatening attacks with no recorded shots are omitted
-\item
-  Aggregating xG across a match double-counts rebound chances
+  Aggregating xG additively biases performance estimates
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Rebounded chances are double-counted
+  \item
+    Players only receive credit when a shot occurs
+  \end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -312,10 +334,10 @@ over 1}
 \protect\phantomsection\label{results-1}
 \begin{columns}[c]
   \column{0.4\textwidth}
-  \includegraphics[width=\linewidth]{calibration_1.png}
+  \includegraphics[width=\linewidth]{figures/calibration_1.png}
   
   \column{0.4\textwidth}
-  \includegraphics[width=\linewidth]{calibration_2.png}
+  \includegraphics[width=\linewidth]{figures/calibration_2.png}
 \end{columns}
 \end{frame}
 
