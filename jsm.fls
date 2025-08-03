@@ -1291,8 +1291,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncms
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
@@ -1306,6 +1304,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT ./figures/calibration_1.png
 INPUT ./figures/calibration_1.png
 INPUT figures/calibration_1.png
@@ -1316,6 +1316,7 @@ INPUT ./figures/calibration_2.png
 INPUT figures/calibration_2.png
 INPUT ./figures/calibration_2.png
 INPUT ./figures/calibration_2.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 OUTPUT jsm.nav

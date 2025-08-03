@@ -20,8 +20,8 @@
 \setbeamercolor{item}{fg=pennred}
 
 \title[Beyond Expected Goals]{Beyond Expected Goals: A Probabilistic Framework for Shot Occurrences in Soccer}
-\author[Feng, Pipping, and Sabin]{Tianshu Feng, Jonathan Pipping, and Paul Sabin}
-\date{\today}
+\author[Pipping, Feng, and Sabin]{Jonathan Pipping, Tianshu Feng, and Paul Sabin}
+\date{August 7, 2025}
 \institute[UPenn]{University of Pennsylvania}
 
 \begin{document}
@@ -66,73 +66,81 @@
   \item Accounts for high-threat attacks with no shots
   \item Avoids double-counting rebounded chances
   \end{itemize}
-\item At each frame, we calculate the probability of a goal:
+\item At each frame $t$, let xG+ be the probability of a goal:
 \begin{align*}
-\mathbb{P}(\text{goal scored}) &= \mathbb{P}(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}(\text{shot taken}) \\
-  &= \text{xG}\cdot\text{xShot}
+\text{xG+}_t &= \mathbb{P}_t(\text{goal scored}) \\
+&= \mathbb{P}_t(\text{goal scored} \mid \text{shot taken})\cdot\mathbb{P}_t(\text{shot taken}) \\
+&= \text{xG}_t\cdot\text{xShot}_t
 \end{align*}
-\item And then define xG+ for each possession as the probability a goal occurs:
-\end{itemize}
-$$\text{xG+} = 1 - (1 - \mathbb{P}(\text{goal scored})^{\text{n\_frames}})$$
-\end{frame}
-
-% Estimating xShot
-\begin{frame}{Estimating xShot}
-\begin{itemize}
-\item \texttt{xShot}: the probability that a shot occurs in the next second
-\item Build a model to estimate \texttt{xShot} based on features from tracking data
-\item Also build our own version of \texttt{xG} model using the same features on observed shots
+\item Then define xG+ over a possession with $n$ frames:
+$$\text{xG+}_\text{poss} = 1 - \prod \left(1 - \mathbb{P}_t\left(\text{goal scored}\right)\right)$$
+\item Estimating this value requires fitting two models: xG and xShot
 \end{itemize}
 \end{frame}
 
-% Data Processing
-\begin{frame}{Data Processing}
+% Data Overview
+\begin{frame}{Data Overview}
 \begin{itemize}
-\item Remove games where no shots are recorded
-\item Only keep frames where the ball is in play and a team has clear possession
-\item Linearly interpolate ball positions to fill in missing frames
-\item \texttt{attack}: Index of the attack the current frame is on (0 if it is not on an attack)
+\item \textbf{Source:} Pro Football Focus (PFF) FC video tracking and event data from the 2022-2025 English Premier League
+\item \textbf{Key Features:}
   \begin{itemize}
-  \item Start with the attacking team gaining possession in their attacking third
-  \item End with the defending team regaining possession or the ball is out of their attacking third
-  \item Only keep frames with \texttt{attack} > 0
+  \item Player positions (x, y) at 30 frames per second
+  \item Ball position (x, y, z) at 30 frames per second
+  \item Shot events and outcomes
+  \item Team possession indicators
+  \item Player and team identifiers
   \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Data Processing}
+% Data Cleaning
+\begin{frame}{Data Cleaning}
 \begin{itemize}
-\item Rotate the coordinates $180^{\circ}$ around the center point for frames where the team attacks from right to left to unify the attacking directions and make all $x$-coordinates positive
-\item Use a polar coordinate system centered on the goal for the ball
+\item \textbf{Filtering:} Keep frames where the ball is in play and a team has clear possession
+\item \textbf{Smooth Ball Tracking:} Linearly interpolate ball positions to fill in missing frames
+\item \textbf{Define Attacking Sequences:}
   \begin{itemize}
-  \item $r_{ball}$ and $\theta_{ball}$ represent the distance and angle of the ball from the goal
-  \item Keep the $z$-coordinate and compute the speed of the ball
+  \item Start: team gains possession in their attacking third
+  \item End: defending team regains possession or ball exits attacking third
   \end{itemize}
-\item Use a polar coordinate system centered on the ball for each player
+\item \textbf{Field Standardization:} Flip right-to-left attacks $180^{\circ}$ to make all attacks go left-to-right
+\end{itemize}
+\end{frame}
+
+% Feature Engineering
+\begin{frame}{Feature Engineering}
+\begin{itemize}
+\item \textbf{Ball Features:}
   \begin{itemize}
-  \item Choose the 5 closest offense teammates and non-GK defenders to the ball as features
-  \item Keep goalkeeper positions as a separate feature
+  \item Distance from goal ($r_{ball}$)
+  \item Angle to goal ($\theta_{ball}$)
+  \item Ball height ($z_{ball}$)
+  \item Ball speed ($v_{ball}$)
+  \end{itemize}
+\item \textbf{Player Features:}
+  \begin{itemize}
+  \item Position of 5 closest offensive teammates relative to the ball ($r_{off}, \theta_{off}$)
+  \item Position of 5 closest non-GK defenders relative to the ball ($r_{def}, \theta_{def}$)
+  \item Position of goalkeeper relative to the goal ($r_{gk}, \theta_{gk}$)
+  \end{itemize}
+\item \textbf{Goal Openness:}
+  \begin{itemize}
+    \item Model defenders as circles with diameter 0.75m
+    \item Draw tangent lines from the ball to defenders and find where they meet the goal line
+    \item Call the percentage of the goal that's unobstructed \texttt{openGoal}
   \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Data Processing}
+% Modeling xShot
+\begin{frame}{Modeling}
 \begin{itemize}
-\item \texttt{openGoal}: Percentage of the goal that is open from the ball's position
-  \begin{itemize}
-  \item Simplify every defender as a circle with a radius of 0.75 m
-  \item Compute the two tangent lines from the ball to every defender in front of the ball their intersection points with the goal line
-  \item Calculate the length of the open goal as the length of goal not covered by segments formed by the intersection points
-  \end{itemize}
-\end{itemize}
-\end{frame}
+  \item \textbf{Training Data:} All data from the 2022-2025 Premier League seasons
+  \item \textbf{Features:} Ball features, player features, and goal openness
+  \item \textbf{xG}: 5-fold cross-validated XGBoost model estimating the probability that a shot is scored
+  \item \textbf{xShot}: 5-fold cross-validated XGBoost model estimating the probability that a shot occurs \emph{in the next second}
 
-% Model Specifications
-\begin{frame}{Model Specifications}
-\begin{itemize}
-\item Trained on all tracking data of 2022-2025 Premier League seasons
-\item Use a 5-fold cross-validation to evaluate both \texttt{xG} and \texttt{xShot} XGBoost models
-\item Choose log loss as the evaluation metric
+  \item \textbf{Evaluation Metric:} Log loss
 \end{itemize}
 \end{frame}
 
