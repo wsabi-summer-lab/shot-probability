@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1754243921 "/Users/Jonathan/wsabi/summer-lab/shot-probability/jsm.tex" "jsm.pdf" "jsm" 1754243923 0
-  "/Users/Jonathan/wsabi/summer-lab/shot-probability/jsm.tex" 1754243920 9212 106c17e8f03de7701787d5fc536609e7 ""
+["pdflatex"] 1754245689 "/Users/Jonathan/wsabi/summer-lab/shot-probability/jsm.tex" "jsm.pdf" "jsm" 1754245691 0
+  "/Users/Jonathan/wsabi/summer-lab/shot-probability/jsm.tex" 1754245689 9598 587ca168bb2fcb49a3040aead28827d4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -212,9 +212,9 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "figures/calibration_1.png" 1753823609 101952 d4c3820bb2525db101667ce5e1cb9831 ""
   "figures/calibration_2.png" 1753823609 107987 546fc1efa051d3e169e7675695784598 ""
-  "jsm.aux" 1754243923 3435 079e7232155fe0251cb5df91e2a7f784 "pdflatex"
-  "jsm.nav" 1754243923 2039 5a4196ea47006e239fc20568aaec1af6 "pdflatex"
-  "jsm.tex" 1754243920 9212 106c17e8f03de7701787d5fc536609e7 ""
+  "jsm.aux" 1754245691 3435 079e7232155fe0251cb5df91e2a7f784 "pdflatex"
+  "jsm.nav" 1754245691 2039 5a4196ea47006e239fc20568aaec1af6 "pdflatex"
+  "jsm.tex" 1754245689 9598 587ca168bb2fcb49a3040aead28827d4 ""
   (generated)
   "jsm.aux"
   "jsm.log"

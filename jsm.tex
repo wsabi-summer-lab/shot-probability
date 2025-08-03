@@ -31,21 +31,33 @@
 % What Are Expected Goals (xG)?
 \begin{frame}{What Are Expected Goals (xG)?}
 \begin{itemize}
-\item Expected Goals (xG) is a metric that estimates the probability that a shot is scored
-\item Depends on factors like distance from goal, angle to goal, shot type, and player positions
-\item Estimated by XGBoost models trained on historical shot data
-\item Often used to measure the quality of a chance
-\item Aggregated over a match or season to measure team performance
+\item \textbf{Expected Goals (xG):} a metric that estimates the probability that a shot is scored
+\begin{itemize}
+  \item Depends on factors like distance from goal, angle to goal, shot type, and player positions
+  \item Estimated by XGBoost models trained on historical shot data
+\end{itemize}
+\item  \textbf{Applications:}
+  \begin{itemize}
+  \item Estimating the quality of a shot
+  \item Measuring of team performance over a match or season
+  \item Residualizing provides a measure of shooter skill
+  \end{itemize}
 \end{itemize}
 \end{frame}
 
 % Limitations of xG
 \begin{frame}{Limitations of xG}
 \begin{itemize}
-\item Models are only trained on \textbf{observed} shots, inducing significant selection bias
-\item Skilled attackers who take more shots are over-represented
-\item Threatening attacks with no recorded shots are omitted
-\item Aggregating xG across a match double-counts rebound chances
+\item \textbf{Selection Bias:} Models are only trained on \emph{observed} shots
+  \begin{itemize}
+  \item Skilled attackers take more shots and are more successful on them
+  \item Any chance without a recorded shot isn't in the training data
+  \end{itemize}
+\item \textbf{Aggregation Issues:} An incomplete measure of team performance
+\begin{itemize}
+  \item Threatening attacks with no recorded shots are omitted
+  \item Rebounded chances are double-counted
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -73,7 +85,7 @@
 &= \text{xG}_t\cdot\text{xShot}_t
 \end{align*}
 \item Then define xG+ over a possession with $n$ frames:
-$$\text{xG+}_\text{poss} = 1 - \prod \left(1 - \mathbb{P}_t\left(\text{goal scored}\right)\right)$$
+$$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left(1 - \mathbb{P}_t\left(\text{goal scored}\right)\right)$$
 \item Estimating this value requires fitting two models: xG and xShot
 \end{itemize}
 \end{frame}
@@ -132,15 +144,17 @@ $$\text{xG+}_\text{poss} = 1 - \prod \left(1 - \mathbb{P}_t\left(\text{goal scor
 \end{itemize}
 \end{frame}
 
-% Modeling xShot
+% Modeling
 \begin{frame}{Modeling}
 \begin{itemize}
-  \item \textbf{Training Data:} All data from the 2022-2025 Premier League seasons
-  \item \textbf{Features:} Ball features, player features, and goal openness
+\item \textbf{Training Data:} All data from the 2022-2025 Premier League seasons
+\item \textbf{Features:} Ball features, player features, and goal openness
+\item \textbf{Models:}
+  \begin{itemize}
   \item \textbf{xG}: 5-fold cross-validated XGBoost model estimating the probability that a shot is scored
   \item \textbf{xShot}: 5-fold cross-validated XGBoost model estimating the probability that a shot occurs \emph{in the next second}
-
-  \item \textbf{Evaluation Metric:} Log loss
+  \end{itemize}
+\item \textbf{Evaluation Metric:} Log loss
 \end{itemize}
 \end{frame}
 
