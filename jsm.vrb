@@ -1,0 +1,21 @@
+\frametitle{Example 2: $>1$ xG on a Possession}
+\begin{itemize}
+\item \textbf{Match:} Orlando City vs. Philadelphia Union (February 22, 2025)
+\item \textbf{Video Link:} \verb|https://youtu.be/vZODSAzF83w?si=ghu2hurGbVjmbd_7&t=363|
+\item \textbf{Sequence:} Multiple shots in one possession totaling 1.63 xG
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|l|c|}
+\hline
+\textbf{Time} & \textbf{Player} & \textbf{Shot Outcome (xG)} \\
+\hline
+78:01 & Brekalo & Shot Blocked (0.05) \\
+78:02 & Muriel & Shot Post (0.52) \\
+78:04 & Pasalic & Shot Post (0.68) \\
+78:05 & Pasalic & Shot Goal (0.38) \\
+\hline
+\end{tabular}
+\caption{Sequence of shots leading to a goal, totaling 1.63 xG.}
+\end{table}
