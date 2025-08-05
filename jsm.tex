@@ -34,11 +34,12 @@
 \item \textbf{Match Analysis:} After a match, commentators often remark that a team "didn't deserve the result." But what is this judgment based on?
 \item \textbf{Traditional Measure:} Expected Goals (xG), which estimates the quality of shots \emph{taken}. But is that the right metric?
 \item \textbf{Our Question:} Which is more notable – getting a shot off, or making it?
-  \begin{itemize}
-  \item \verb|https://youtu.be/s1aQb1bgPdQ?si=aZEeb5Mbl3tmkruG&t=64|
-  \item \verb|https://youtu.be/s1aQb1bgPdQ?si=aZEeb5Mbl3tmkruG&t=164|
-  \end{itemize}
 \end{itemize}
+\end{frame}
+
+% Mbappe Video Example
+\begin{frame}{Video Example}
+% Video content will be added here
 \end{frame}
 
 % What Are Expected Goals (xG)?
@@ -78,21 +79,25 @@
 \begin{frame}[fragile]{Example 1: No Recorded Shot}
 \begin{itemize}
 \item \textbf{Match:} Manchester City v Real Madrid (Feb 19, 2025)
-\item \textbf{Question:} Which one had a higher chance of being a goal?
-  \begin{itemize}
-  \item \verb|https://youtu.be/s1aQb1bgPdQ?si=aZEeb5Mbl3tmkruG&t=295| - 0.03 xG with outside shot
-  \item \verb|https://youtu.be/s1aQb1bgPdQ?si=aZEeb5Mbl3tmkruG&t=310| - 0.00 xG because no shot occurred
-  \end{itemize}
+\item \textbf{Question:} Which chance was more likely to produce a goal?
 \end{itemize}
+
+\vspace{6cm}
+% Video will be added here
 \end{frame}
 
-\begin{frame}[fragile]{Example 2: $>1$ xG on a Possession}
+% Video Example 2
+\begin{frame}{Example 2: $>1$ xG on a Possession}
 \begin{itemize}
 \item \textbf{Match:} Orlando City vs. Philadelphia Union (February 22, 2025)
-\item \textbf{Video Link:} \verb|https://youtu.be/vZODSAzF83w?si=ghu2hurGbVjmbd_7&t=363|
 \item \textbf{Sequence:} Multiple shots in one possession totaling 1.63 xG
 \end{itemize}
 
+\vspace{6cm}
+% Video will be added here
+\end{frame}
+
+\begin{frame}{Example 2: $>1$ xG on a Possession}
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|l|c|}
@@ -198,13 +203,13 @@ $$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left(1 - \mathbb{P}_t\left(\text
 \end{frame}
 
 % Results - xG model
-\begin{frame}{Results - xG Model}
+\begin{frame}{xG Model Results}
 \begin{columns}[c]
   \includegraphics[width=\linewidth]{figures/xG_feature_importance.png}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Results - xG Model}
+\begin{frame}{xG Model Results}
 \begin{columns}[c]
   \column{0.4\textwidth}
   \includegraphics[width=\linewidth]{figures/xG_PDP_r.png}
@@ -217,13 +222,13 @@ $$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left(1 - \mathbb{P}_t\left(\text
 \end{frame}
 
 % Results - xShot model
-\begin{frame}{Results - xS Model}
+\begin{frame}{xS Model Results}
 \begin{columns}[c]
   \includegraphics[width=\linewidth]{figures/xS_feature_importance.png}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Results - xS Model}
+\begin{frame}{xS Model Results}
 \begin{columns}[c]
   \column{0.5\textwidth}
   \includegraphics[width=\linewidth]{figures/xS_PDP_r.png}
