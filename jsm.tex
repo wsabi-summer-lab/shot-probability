@@ -20,7 +20,7 @@
 \setbeamercolor{item}{fg=pennred}
 
 \title[Beyond Expected Goals]{Beyond Expected Goals: A Probabilistic Framework for Shot Occurrences in Soccer}
-\author[Pipping, Feng, and Sabin]{Jonathan Pipping, Tianshu Feng, and Paul Sabin}
+\author[Pipping, Feng, \& Sabin]{Jonathan Pipping, Tianshu Feng, and Paul Sabin}
 \date{August 7, 2025}
 \institute[UPenn]{University of Pennsylvania}
 
@@ -197,14 +197,39 @@ $$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left(1 - \mathbb{P}_t\left(\text
 \end{itemize}
 \end{frame}
 
-% Results
-\begin{frame}{Results}
+% Results - xG model
+\begin{frame}{Results - xG Model}
+\begin{columns}[c]
+  \includegraphics[width=\linewidth]{figures/xG_feature_importance.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Results - xG Model}
 \begin{columns}[c]
   \column{0.4\textwidth}
-  \includegraphics[width=\linewidth]{figures/calibration_1.png}
-  
+  \includegraphics[width=\linewidth]{figures/xG_PDP_r.png}
+  \includegraphics[width=\linewidth]{figures/xG_PDP_speed.png}
+
   \column{0.4\textwidth}
-  \includegraphics[width=\linewidth]{figures/calibration_2.png}
+  \includegraphics[width=\linewidth]{figures/xG_PDP_openGoal.png}
+  \includegraphics[width=\linewidth]{figures/xG_PDP_z.png}
+\end{columns}
+\end{frame}
+
+% Results - xShot model
+\begin{frame}{Results - xS Model}
+\begin{columns}[c]
+  \includegraphics[width=\linewidth]{figures/xS_feature_importance.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Results - xS Model}
+\begin{columns}[c]
+  \column{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/xS_PDP_r.png}
+
+  \column{0.5\textwidth}
+  \includegraphics[width=\linewidth]{figures/xS_PDP_speed.png}
 \end{columns}
 \end{frame}
 
