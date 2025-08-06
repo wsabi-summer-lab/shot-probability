@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.16)  5 AUG 2025 19:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.16)  5 AUG 2025 23:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**jsm.tex
-(./jsm.tex
+**presentation.tex
+(./presentation.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamer.cls
@@ -747,8 +747,8 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count339
 \l__pdf_internal_box=\box76
 )
-(./jsm.aux)
-\openout1 = `jsm.aux'.
+No file presentation.aux.
+\openout1 = `presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
@@ -768,7 +768,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -902,12 +901,15 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-theorem-dic
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./jsm.nav) [1
+)
+No file presentation.nav.
+[1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-\openout4 = `jsm.vrb'.
+\openout4 = `presentation.vrb'.
 
- (./jsm.vrb) [2
+
+(./presentation.vrb) [2
 
 ] [3
 
@@ -916,9 +918,9 @@ Dictionary: translator-theorem-dictionary, Language: English
 ] [5
 
 ]
-\openout4 = `jsm.vrb'.
+\openout4 = `presentation.vrb'.
 
- (./jsm.vrb) [6
+ (./presentation.vrb) [6
 
 ]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
@@ -954,7 +956,7 @@ thkerncmss.
 ] [13
 
 ]
-<figures/xG_feature_importance.png, id=390, 722.7pt x 433.62pt>
+<figures/xG_feature_importance.png, id=388, 722.7pt x 433.62pt>
 File: figures/xG_feature_importance.png Graphic file (type png)
 <use figures/xG_feature_importance.png>
 Package pdftex.def Info: figures/xG_feature_importance.png  used on input line 
@@ -963,22 +965,22 @@ Package pdftex.def Info: figures/xG_feature_importance.png  used on input line
  [14
 
  <./figures/xG_feature_importance.png>]
-<figures/xG_PDP_r.png, id=419, 462.528pt x 346.896pt>
+<figures/xG_PDP_r.png, id=417, 462.528pt x 346.896pt>
 File: figures/xG_PDP_r.png Graphic file (type png)
 <use figures/xG_PDP_r.png>
 Package pdftex.def Info: figures/xG_PDP_r.png  used on input line 222.
 (pdftex.def)             Requested size: 136.91603pt x 102.68806pt.
-<figures/xG_PDP_speed.png, id=420, 462.528pt x 346.896pt>
+<figures/xG_PDP_speed.png, id=418, 462.528pt x 346.896pt>
 File: figures/xG_PDP_speed.png Graphic file (type png)
 <use figures/xG_PDP_speed.png>
 Package pdftex.def Info: figures/xG_PDP_speed.png  used on input line 222.
 (pdftex.def)             Requested size: 136.91603pt x 102.68806pt.
-<figures/xG_PDP_openGoal.png, id=421, 462.528pt x 346.896pt>
+<figures/xG_PDP_openGoal.png, id=419, 462.528pt x 346.896pt>
 File: figures/xG_PDP_openGoal.png Graphic file (type png)
 <use figures/xG_PDP_openGoal.png>
 Package pdftex.def Info: figures/xG_PDP_openGoal.png  used on input line 222.
 (pdftex.def)             Requested size: 136.91603pt x 102.68806pt.
-<figures/xG_PDP_z.png, id=422, 462.528pt x 346.896pt>
+<figures/xG_PDP_z.png, id=420, 462.528pt x 346.896pt>
 File: figures/xG_PDP_z.png Graphic file (type png)
 <use figures/xG_PDP_z.png>
 Package pdftex.def Info: figures/xG_PDP_z.png  used on input line 222.
@@ -988,7 +990,7 @@ Package pdftex.def Info: figures/xG_PDP_z.png  used on input line 222.
 
  <./figures/xG_PDP_r.png> <./figures/xG_PDP_speed.png> <./figures/xG_PDP_openGo
 al.png> <./figures/xG_PDP_z.png>]
-<figures/xS_feature_importance.png, id=453, 722.7pt x 433.62pt>
+<figures/xS_feature_importance.png, id=451, 722.7pt x 433.62pt>
 File: figures/xS_feature_importance.png Graphic file (type png)
 <use figures/xS_feature_importance.png>
 Package pdftex.def Info: figures/xS_feature_importance.png  used on input line 
@@ -997,12 +999,12 @@ Package pdftex.def Info: figures/xS_feature_importance.png  used on input line
  [16
 
  <./figures/xS_feature_importance.png>]
-<figures/xS_PDP_r.png, id=482, 462.528pt x 346.896pt>
+<figures/xS_PDP_r.png, id=480, 462.528pt x 346.896pt>
 File: figures/xS_PDP_r.png Graphic file (type png)
 <use figures/xS_PDP_r.png>
 Package pdftex.def Info: figures/xS_PDP_r.png  used on input line 239.
 (pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
-<figures/xS_PDP_speed.png, id=483, 462.528pt x 346.896pt>
+<figures/xS_PDP_speed.png, id=481, 462.528pt x 346.896pt>
 File: figures/xS_PDP_speed.png Graphic file (type png)
 <use figures/xS_PDP_speed.png>
 Package pdftex.def Info: figures/xS_PDP_speed.png  used on input line 239.
@@ -1029,7 +1031,7 @@ Package pdftex.def Info: figures/xS_PDP_speed.png  used on input line 239.
 ] [26
 
 ]
-<figures/xseoe_vs_xgoe.png, id=750, 368.3361pt x 361.1091pt>
+<figures/xseoe_vs_xgoe.png, id=748, 368.3361pt x 361.1091pt>
 File: figures/xseoe_vs_xgoe.png Graphic file (type png)
 <use figures/xseoe_vs_xgoe.png>
 Package pdftex.def Info: figures/xseoe_vs_xgoe.png  used on input line 380.
@@ -1045,38 +1047,38 @@ Package pdftex.def Info: figures/xseoe_vs_xgoe.png  used on input line 380.
 
 ]
 \tf@nav=\write5
-\openout5 = `jsm.nav'.
+\openout5 = `presentation.nav'.
 
 \tf@toc=\write6
-\openout6 = `jsm.toc'.
+\openout6 = `presentation.toc'.
 
 \tf@snm=\write7
-\openout7 = `jsm.snm'.
+\openout7 = `presentation.snm'.
 
- (./jsm.aux) ) 
+ (./presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 22467 strings out of 476025
- 442493 string characters out of 5790017
+ 22398 strings out of 476025
+ 442103 string characters out of 5790017
  1875388 words of memory out of 5000000
- 42374 multiletter control sequences out of 15000+600000
+ 42309 multiletter control sequences out of 15000+600000
  527098 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,399b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-s8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssb
-x10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
-i10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
-i8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
-fb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb>
-Output written on jsm.pdf (30 pages, 608748 bytes).
+ 128i,15n,122p,408b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb>
+Output written on presentation.pdf (30 pages, 608285 bytes).
 PDF statistics:
  930 PDF objects out of 1000 (max. 8388607)
  829 compressed objects within 9 object streams
