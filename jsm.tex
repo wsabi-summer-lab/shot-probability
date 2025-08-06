@@ -242,7 +242,7 @@ $$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left(1 - \mathbb{P}_t\left(\text
 \begin{frame}{Cross-Validation Study}
 \begin{itemize}
 \item \textbf{Objective:} Evaluate xG+ performance using cross-validated Poisson models
-\item \textbf{Dataset:} 3 seasons of match data (114 folds total)
+\item \textbf{Dataset:} 3 seasons of EPL match data
 \item \textbf{Method:} Train on all matchdays except one, predict goals on held-out data
 \item \textbf{Goal:} Determine how well adjusted xG+ explains actual goals scored
 \end{itemize}
@@ -251,7 +251,8 @@ $$\text{xG+}_\text{poss} = 1 - \prod_{t = 1}^n \left(1 - \mathbb{P}_t\left(\text
 % Cross-Validation Setup
 \begin{frame}{Cross-Validation Setup}
 \begin{itemize}
-\item \textbf{Setup:} Each matchday treated as a fold: $38 \text{ matchdays} \times 3 = 114$ folds
+\item \textbf{Setup:} Treat each matchday as a fold.
+$$38 \text{ matchdays} \times 3 \text{ seasons} = 114 \text{ folds}$$
 \item \textbf{For each fold:}
   \begin{itemize}
   \item Train on all matchdays except one to acquire adjusted metrics
